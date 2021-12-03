@@ -1,1 +1,3 @@
-Build in Jenkins
+node{}
+  stage (Stage1)
+  echo ' This is my first file'
