@@ -3,6 +3,7 @@ resource "aws_instance" "myec2" {
   instance_type = var.instance_type
   subnet_id   = var.subnet_id_name
   key_name = var.key_name
+  user_data = "${file("userdata.sh")}"
   security_groups = var.security_groups
   tags = {
     Name = "Ec2tf"
