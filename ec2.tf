@@ -1,11 +1,11 @@
-resource "aws_instance" "myec2" {
-  ami           = var.ami_name
-  instance_type = var.instance_type
-  subnet_id   = var.subnet_id_name
-  key_name = var.key_name
-  user_data = "${file("userdata.sh")}"
-  security_groups = var.security_groups
-  tags = {
-    Name = "Ec2tf"
-  }
+provider "aws"{
+  region="us-east-2"
+}
+resource "aws_lambda_function" "test_lambda" {
+ // filename      = "lambda_function_payload.zip"
+  function_name = "lambda_function_name"
+  role          = "arn:aws:iam::697613968254:role/service-role/demo-lamda-role-ywf15xwb"
+  handler       = "index.test"
+//source_code_hash = filebase64sha256("lambda_function_payload.zip")
+runtime = "python 3.9"
 }
