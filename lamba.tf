@@ -7,5 +7,5 @@ resource "aws_lambda_function" "test_lambda" {
   role          = "arn:aws:iam::697613968254:role/service-role/demo-lamda-role-ywf15xwb"
   handler       = "index.test"
 //source_code_hash = filebase64sha256("lambda_function_payload.zip")
-runtime = "Python 3.9"
+runtime = "python3.9"
 }
